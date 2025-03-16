@@ -1,102 +1,99 @@
-import React from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPython, FaJava, FaJs, FaReact, FaDocker, FaAws, FaGitAlt, FaDatabase, FaCloud, FaHtml5, FaCss3Alt, FaLinux, FaWindows } from 'react-icons/fa';
-import { SiC, SiDjango, SiFlask, SiExpress, SiMongodb, SiPostgresql, SiGooglecloud, SiKubernetes, SiGraphql, SiTypescript, SiSpringboot, SiMysql } from 'react-icons/si';
+import { 
+  FaPython, FaJs, FaHtml5, FaCss3Alt, FaJava, FaDatabase, FaCloud, FaGitAlt, FaLinux, FaWindows, FaAws, FaDocker, FaReact 
+} from 'react-icons/fa';
+import { 
+  SiTypescript, SiC, SiSpringboot, SiDjango, SiFlask, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiGooglecloud, SiKubernetes, SiGraphql 
+} from 'react-icons/si';
+
+type Skill = {
+  name: string;
+  icon: React.ReactNode;
+  category: string;
+};
+
+const skillsData: Skill[] = [
+  { name: 'Python', icon: <FaPython className="text-yellow-500 text-4xl" />, category: 'Languages' },
+  { name: 'JavaScript', icon: <FaJs className="text-yellow-400 text-4xl" />, category: 'Languages' },
+  { name: 'TypeScript', icon: <SiTypescript className="text-blue-600 text-4xl" />, category: 'Languages' },
+  { name: 'C', icon: <SiC className="text-gray-600 text-4xl" />, category: 'Languages' },
+  { name: 'HTML', icon: <FaHtml5 className="text-orange-500 text-4xl" />, category: 'Languages' },
+  { name: 'CSS', icon: <FaCss3Alt className="text-blue-600 text-4xl" />, category: 'Languages' },
+  { name: 'Java', icon: <FaJava className="text-red-500 text-4xl" />, category: 'Languages' },
+  { name: 'React.js', icon: <FaReact className="text-blue-400 text-4xl" />, category: 'Frameworks & Libraries' },
+  { name: 'Django', icon: <SiDjango className="text-green-700 text-4xl" />, category: 'Frameworks & Libraries' },
+  { name: 'Flask', icon: <SiFlask className="text-gray-500 text-4xl" />, category: 'Frameworks & Libraries' },
+  { name: 'Express.js', icon: <SiExpress className="text-black text-4xl" />, category: 'Frameworks & Libraries' },
+  { name: 'Spring Boot', icon: <SiSpringboot className="text-green-500 text-4xl" />, category: 'Frameworks & Libraries' },
+  { name: 'MongoDB', icon: <SiMongodb className="text-green-500 text-4xl" />, category: 'Databases' },
+  { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-700 text-4xl" />, category: 'Databases' },
+  { name: 'MySQL', icon: <SiMysql className="text-blue-500 text-4xl" />, category: 'Databases' },
+  { name: 'AWS', icon: <FaAws className="text-orange-500 text-4xl" />, category: 'Cloud & DevOps' },
+  { name: 'Google Cloud', icon: <SiGooglecloud className="text-blue-400 text-4xl" />, category: 'Cloud & DevOps' },
+  { name: 'Docker', icon: <FaDocker className="text-blue-500 text-4xl" />, category: 'Cloud & DevOps' },
+  { name: 'Kubernetes', icon: <SiKubernetes className="text-blue-600 text-4xl" />, category: 'Cloud & DevOps' },
+  { name: 'Git', icon: <FaGitAlt className="text-orange-600 text-4xl" />, category: 'Version Control & Tools' },
+  { name: 'GitHub', icon: <FaGitAlt className="text-black text-4xl" />, category: 'Version Control & Tools' },
+  { name: 'GraphQL', icon: <SiGraphql className="text-pink-500 text-4xl" />, category: 'Version Control & Tools' },
+  { name: 'Linux', icon: <FaLinux className="text-black text-4xl" />, category: 'Operating Systems' },
+  { name: 'Windows', icon: <FaWindows className="text-blue-500 text-4xl" />, category: 'Operating Systems' }
+];
 
 export function Skills() {
-  const skills = [
-    {
-      category: 'Languages',
-      icon: <FaDatabase className="w-6 h-6 text-blue-500" />,
-      items: [
-        { name: 'Python', icon: <FaPython className="text-yellow-500" /> },
-        { name: 'JavaScript', icon: <FaJs className="text-yellow-400" /> },
-        { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> },
-        { name: 'C', icon: <SiC className="text-gray-600" /> },
-        { name: 'HTML', icon: <FaHtml5 className="text-orange-500" /> },
-        { name: 'CSS', icon: <FaCss3Alt className="text-blue-600" /> },
-        { name: 'Java', icon: <FaJava className="text-red-500" /> },
-      ]
-    },
-    {
-      category: 'Frameworks & Libraries',
-      icon: <SiSpringboot className="w-6 h-6 text-green-500" />,
-      items: [
-        { name: 'React.js', icon: <FaReact className="text-blue-400" /> },
-        { name: 'Django', icon: <SiDjango className="text-green-700" /> },
-        { name: 'Flask', icon: <SiFlask className="text-gray-500" /> },
-        { name: 'Express.js', icon: <SiExpress className="text-black" /> },
-        { name: 'Spring Boot', icon: <SiSpringboot className="text-green-500" /> },
-      ]
-    },
-    {
-      category: 'Databases',
-      icon: <FaDatabase className="w-6 h-6 text-purple-500" />,
-      items: [
-        { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
-        { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-700" /> },
-        { name: 'MySQL', icon: <SiMysql className="text-blue-500" /> },
-      ]
-    },
-    {
-      category: 'Cloud & DevOps',
-      icon: <FaCloud className="w-6 h-6 text-blue-600" />,
-      items: [
-        { name: 'AWS', icon: <FaAws className="text-orange-500" /> },
-        { name: 'Google Cloud', icon: <SiGooglecloud className="text-blue-400" /> },
-        { name: 'Docker', icon: <FaDocker className="text-blue-500" /> },
-        { name: 'Kubernetes', icon: <SiKubernetes className="text-blue-600" /> },
-      ]
-    },
-    {
-      category: 'Version Control & Tools',
-      icon: <FaGitAlt className="w-6 h-6 text-red-500" />,
-      items: [
-        { name: 'Git', icon: <FaGitAlt className="text-orange-600" /> },
-        { name: 'GitHub', icon: <FaGitAlt className="text-black" /> },
-        { name: 'GraphQL', icon: <SiGraphql className="text-pink-500" /> },
-      ]
-    },
-    {
-      category: 'Operating Systems',
-      icon: <FaLinux className="w-6 h-6 text-black" />,
-      items: [
-        { name: 'Linux', icon: <FaLinux className="text-black" /> },
-        { name: 'Windows', icon: <FaWindows className="text-blue-500" /> },
-      ]
-    },
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  
+  const filteredSkills = activeCategory === 'all' 
+    ? skillsData 
+    : skillsData.filter(skill => skill.category === activeCategory);
+
+  const categories = [
+    { id: 'all', name: 'All Skills', icon: <FaDatabase className="text-blue-500 text-2xl" /> },
+    { id: 'Languages', name: 'Languages', icon: <FaPython className="text-yellow-500 text-2xl" /> },
+    { id: 'Frameworks & Libraries', name: 'Frameworks & Libraries', icon: <SiSpringboot className="text-green-500 text-2xl" /> },
+    { id: 'Databases', name: 'Databases', icon: <FaDatabase className="text-purple-500 text-2xl" /> },
+    { id: 'Cloud & DevOps', name: 'Cloud & DevOps', icon: <FaCloud className="text-blue-600 text-2xl" /> },
+    { id: 'Version Control & Tools', name: 'Version Control & Tools', icon: <FaGitAlt className="text-red-500 text-2xl" /> },
+    { id: 'Operating Systems', name: 'Operating Systems', icon: <FaLinux className="text-black text-2xl" /> }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-background">
-      <div className="section-container">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">Skills</h2>
-          <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+    <section id="skills" className="py-24 px-6 bg-gradient-to-b from-background to-muted/10">
+      <div className="container mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">My technical toolkit and expertise</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skills.map((skillGroup, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-card rounded-2xl p-8 animate-fadeIn"
+
+        <div className="flex justify-center mb-10 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 p-2">
+          <div className="flex flex-nowrap gap-1">
+            {categories.map(category => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`flex items-center gap-2 px-5 rounded-full transition-all duration-300 ${
+                  activeCategory === category.id ? 'bg-foreground text-background' : 'bg-muted/50 hover:bg-muted'
+                }`}
+              >
+                {category.icon} {category.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <motion.div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-5 max-w-5xl mx-auto overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 p-2" layout>
+          {filteredSkills.map(skill => (
+            <motion.div 
+              key={skill.name} 
+              className="p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white"
             >
-              <div className="flex items-center gap-3 mb-6">
-                {skillGroup.icon}
-                <h3 className="text-lg font-semibold">{skillGroup.category}</h3>
+              <div className="mb-4 p-3 rounded-lg w-fit mx-auto">
+                {skill.icon}
               </div>
-              <div className="flex flex-wrap gap-3">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="flex items-center gap-2 px-3 py-1 bg-primary/10 hover:bg-primary/20 transition-colors rounded-full text-sm">
-                    {skill.icon} {skill.name}
-                  </span>
-                ))}
-              </div>
+              <h3 className="text-center font-medium">{skill.name}</h3>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
