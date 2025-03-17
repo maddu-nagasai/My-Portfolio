@@ -12,8 +12,8 @@ import { motion } from "framer-motion";
 const routes = [
   { name: "Home", path: "/", id: "home", icon: <FaHome className="text-lg sm:text-xl" /> },
   { name: "About", path: "/about", id: "about", icon: <FaUser className="text-lg sm:text-xl" /> },
-  { name: "Skills", id: "skills", path: "/skills", icon: <FaCode className="text-lg sm:text-xl" /> }, // Added Skills
   { name: "Education", path: "/education", id: "education", icon: <FaGraduationCap className="text-lg sm:text-xl" /> },
+  { name: "Skills", id: "skills", path: "/skills", icon: <FaCode className="text-lg sm:text-xl" /> },
   { name: "Experience", path: "/experience", id: "experience", icon: <FaBriefcase className="text-lg sm:text-xl" /> },
   { name: "Projects", path: "/projects", id: "projects", icon: <FaProjectDiagram className="text-lg sm:text-xl" /> },
   { name: "Contact", path: "/contact", id: "contact", icon: <FaEnvelope className="text-lg sm:text-xl" /> },
