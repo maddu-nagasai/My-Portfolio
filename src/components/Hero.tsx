@@ -95,7 +95,7 @@ export function Hero() {
               <div className="flex gap-4">
                 {/* Contact Button */}
                 <a 
-                  href="#contact" 
+                  href="/contact" 
                   className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2"
                 >
                   <Mail size={20} /> Contact Me
