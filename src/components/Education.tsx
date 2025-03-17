@@ -1,4 +1,3 @@
-
 export function Education() {
   return (
     <section id="education" className="py-20 bg-background">
@@ -7,36 +6,36 @@ export function Education() {
           <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4">Education</h2>
           <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="glass-card rounded-2xl p-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/3">
                 <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                  <div className="text-4xl font-bold text-primary">B.tech</div>
+                  <div className="text-4xl font-bold text-primary">B.Tech</div>
                 </div>
               </div>
-              
+
               <div className="md:w-2/3 space-y-4">
                 <div>
-                  <h3 className="text-2xl font-bold">KIET group of institutions</h3>
+                  <h3 className="text-2xl font-bold">KIET Group of Institutions</h3>
                   <p className="text-foreground/70">2021 – 2025 | Kakinada, India</p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Relevant Courses</h4>
                   <div className="flex flex-wrap gap-2">
                     {[
                       "Networking",
-                      "Operating systems",
-                      "Data structures",
+                      "Operating Systems",
+                      "Data Structures",
                       "Analysis of Algorithms",
                       "Databases",
                       "Statistics",
-                      "Machine learning"
+                      "Machine Learning"
                     ].map((course, i) => (
-                      <span 
-                        key={i} 
+                      <span
+                        key={i}
                         className="px-3 py-1 bg-primary/10 rounded-full text-sm"
                       >
                         {course}
@@ -44,7 +43,7 @@ export function Education() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="pt-4">
                   <div className="h-2 w-full bg-primary/10 rounded-full">
                     <div className="h-full bg-primary rounded-full w-4/5 animate-pulse"></div>
@@ -56,13 +55,13 @@ export function Education() {
                 </div>
               </div>
             </div>
-            
+
             <div className="mt-10 pt-8 border-t border-border">
               <h4 className="font-semibold text-lg mb-4">Educational Journey</h4>
-              
+
               <div className="relative pl-8">
                 <div className="timeline-line"></div>
-                
+
                 <div className="relative mb-8">
                   <div className="timeline-dot absolute -left-8 top-0"></div>
                   <div className="glass-card rounded-lg p-4">
@@ -71,7 +70,7 @@ export function Education() {
                     <p className="mt-2 text-foreground/80">Began B.Tech journey in Computer Science</p>
                   </div>
                 </div>
-                
+
                 <div className="relative mb-8">
                   <div className="timeline-dot absolute -left-8 top-0"></div>
                   <div className="glass-card rounded-lg p-4">
@@ -80,7 +79,34 @@ export function Education() {
                     <p className="mt-2 text-foreground/80">Summer Internship at IIIT Hyderabad</p>
                   </div>
                 </div>
-                
+
+                <div className="relative mb-8">
+                  <div className="timeline-dot absolute -left-8 top-0"></div>
+                  <div className="glass-card rounded-lg p-4">
+                    <h5 className="font-medium">Salesforce Developer Internship</h5>
+                    <p className="text-sm text-foreground/70">2023</p>
+                    <p className="mt-2 text-foreground/80">Worked on cloud-based applications using Salesforce</p>
+                  </div>
+                </div>
+
+                <div className="relative mb-8">
+                  <div className="timeline-dot absolute -left-8 top-0"></div>
+                  <div className="glass-card rounded-lg p-4">
+                    <h5 className="font-medium">Data Analytics Internship</h5>
+                    <p className="text-sm text-foreground/70">2024</p>
+                    <p className="mt-2 text-foreground/80">Analyzed large datasets and built predictive models</p>
+                  </div>
+                </div>
+
+                <div className="relative mb-8">
+                  <div className="timeline-dot absolute -left-8 top-0"></div>
+                  <div className="glass-card rounded-lg p-4">
+                    <h5 className="font-medium">Web Developer Internship</h5>
+                    <p className="text-sm text-foreground/70">2024</p>
+                    <p className="mt-2 text-foreground/80">Developed full-stack web applications using MERN</p>
+                  </div>
+                </div>
+
                 <div className="relative">
                   <div className="timeline-dot absolute -left-8 top-0"></div>
                   <div className="glass-card rounded-lg p-4">
@@ -89,6 +115,7 @@ export function Education() {
                     <p className="mt-2 text-foreground/80">Final year - focusing on advanced technologies and career opportunities</p>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>

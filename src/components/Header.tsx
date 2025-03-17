@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";  // Import motion for animations
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
 
@@ -43,9 +43,10 @@ export function Header() {
             to="/"
             className="flex items-center space-x-2 font-display text-xl sm:text-2xl font-semibold"
           >
-            <span className="text-gradient">Nagasai</span>
+            <span className="text-gradient">𝝥</span>
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             <nav className="flex items-center space-x-2 mr-4">
               {routes.map((route) => (
@@ -60,11 +61,26 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-            <ThemeToggle />
+
+            {/* Theme Toggle with Rotation Effect on Hover */}
+            <motion.div
+              whileHover={{ rotate: 3600 }}  // Rotates when hovered
+              transition={{ duration: 10, ease: "linear" }} // Faster rotation speed
+            >
+              <ThemeToggle />
+            </motion.div>
           </div>
 
+          {/* Mobile Menu */}
           <div className="flex items-center md:hidden">
-            <ThemeToggle />
+            {/* Theme Toggle with Rotation Effect on Hover for Mobile */}
+            <motion.div
+              whileHover={{ rotate: 3600 }}  // Rotates when hovered
+              transition={{ duration: 10, ease: "linear" }} // Faster rotation speed
+            >
+              <ThemeToggle />
+            </motion.div>
+
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="ml-3 p-2 text-foreground focus:outline-none"

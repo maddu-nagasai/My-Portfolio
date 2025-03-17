@@ -23,7 +23,7 @@ export function About() {
             
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                   <Mail size={18} />
                 </div>
                 <div>
@@ -33,7 +33,7 @@ export function About() {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                   <Phone size={18} />
                 </div>
                 <div>
@@ -43,7 +43,7 @@ export function About() {
               </div>
               
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
                   <MapPin size={18} />
                 </div>
                 <div>
@@ -57,7 +57,7 @@ export function About() {
           <div className="glass-card rounded-2xl p-8 animate-fadeInRight" style={{ animationDelay: "0.4s" }}>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0 hover:bg-primary hover:text-primary-foreground transition-colors">
                   <GraduationCap size={18} />
                 </div>
                 <div>
@@ -68,7 +68,7 @@ export function About() {
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mt-1 shrink-0 hover:bg-primary hover:text-primary-foreground transition-colors">
                   <Briefcase size={18} />
                 </div>
                 <div>
