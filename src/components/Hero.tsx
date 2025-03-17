@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { Code2, Terminal, Database, Cloud } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
 import { useEffect, useRef } from 'react';
+import { Link, useLocation } from "react-router-dom";
+
+
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -94,12 +97,13 @@ export function Hero() {
               {/* Buttons (Contact & Resume) */}
               <div className="flex gap-4">
                 {/* Contact Button */}
-                <a 
-                  href="/contact" 
+                <Link 
+                  to="/contact" 
                   className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity flex items-center gap-2"
                 >
                   <Mail size={20} /> Contact Me
-                </a>
+                </Link>
+
 
                 {/* Resume Button - Now next to Contact */}
                 <a 
