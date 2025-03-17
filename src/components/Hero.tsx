@@ -53,7 +53,7 @@ export function Hero() {
                 <h2 className="text-lg sm:text-xl text-foreground/70 font-medium">
                   Hello, I'm
                 </h2>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gradient mt-2">
+                <h1 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-gradient mt-2">
                   Maddu Nagasai
                 </h1>
                 <br />

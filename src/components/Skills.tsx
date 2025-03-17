@@ -24,7 +24,7 @@ const skillsData: Skill[] = [
   { name: 'React.js', icon: <FaReact className="text-blue-400 text-4xl" />, category: 'Frameworks & Libraries' },
   { name: 'Django', icon: <SiDjango className="text-green-700 text-4xl" />, category: 'Frameworks & Libraries' },
   { name: 'Flask', icon: <SiFlask className="text-gray-500 text-4xl" />, category: 'Frameworks & Libraries' },
-  { name: 'Express.js', icon: <SiExpress className="text-black text-4xl" />, category: 'Frameworks & Libraries' },
+  { name: 'Express.js', icon: <SiExpress className="text-yellow-500 text-4xl" />, category: 'Frameworks & Libraries' },
   { name: 'Spring Boot', icon: <SiSpringboot className="text-green-500 text-4xl" />, category: 'Frameworks & Libraries' },
   { name: 'MongoDB', icon: <SiMongodb className="text-green-500 text-4xl" />, category: 'Databases' },
   { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-700 text-4xl" />, category: 'Databases' },
@@ -34,9 +34,8 @@ const skillsData: Skill[] = [
   { name: 'Docker', icon: <FaDocker className="text-blue-500 text-4xl" />, category: 'Cloud & DevOps' },
   { name: 'Kubernetes', icon: <SiKubernetes className="text-blue-600 text-4xl" />, category: 'Cloud & DevOps' },
   { name: 'Git', icon: <FaGitAlt className="text-orange-600 text-4xl" />, category: 'Version Control & Tools' },
-  { name: 'GitHub', icon: <FaGitAlt className="text-black text-4xl" />, category: 'Version Control & Tools' },
   { name: 'GraphQL', icon: <SiGraphql className="text-pink-500 text-4xl" />, category: 'Version Control & Tools' },
-  { name: 'Linux', icon: <FaLinux className="text-black text-4xl" />, category: 'Operating Systems' },
+  { name: 'Linux', icon: <FaLinux className="text-gray-400 text-4xl" />, category: 'Operating Systems' },
   { name: 'Windows', icon: <FaWindows className="text-blue-500 text-4xl" />, category: 'Operating Systems' }
 ];
 
@@ -71,7 +70,7 @@ export function Skills() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-5 rounded-full transition-all duration-300 ${
+                className={`flex items-center gap-2 px-5 py-2 rounded-full transition-all duration-300 ${
                   activeCategory === category.id ? 'bg-foreground text-background' : 'bg-muted/50 hover:bg-muted'
                 }`}
               >
@@ -81,11 +80,11 @@ export function Skills() {
           </div>
         </div>
 
-        <motion.div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-5 max-w-5xl mx-auto overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 p-2" layout>
+        <motion.div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-5 max-w-5xl mx-auto p-2" layout>
           {filteredSkills.map(skill => (
             <motion.div 
               key={skill.name} 
-              className="p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white"
+              className="p-6 rounded-xl shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-blue-700 hover:via-black-700 hover:to-black-700 hover:text-white"
             >
               <div className="mb-4 p-3 rounded-lg w-fit mx-auto">
                 {skill.icon}
