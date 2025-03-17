@@ -1,21 +1,25 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { motion } from "framer-motion";  // Import motion for animations
-import ThemeToggle from "./ThemeToggle";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
+import { 
+  FaHome, FaUser, FaBriefcase, FaGraduationCap, FaProjectDiagram, FaEnvelope 
+} from "react-icons/fa"; // Import icons
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Routes with Icons
   const routes = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Experience", path: "/experience" },
-    { name: "Education", path: "/education" },
-    { name: "Projects", path: "/projects" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "/", icon: <FaHome className="text-lg sm:text-xl" /> },
+    { name: "About", path: "/about", icon: <FaUser className="text-lg sm:text-xl" /> },
+    { name: "Experience", path: "/experience", icon: <FaBriefcase className="text-lg sm:text-xl" /> },
+    { name: "Education", path: "/education", icon: <FaGraduationCap className="text-lg sm:text-xl" /> },
+    { name: "Projects", path: "/projects", icon: <FaProjectDiagram className="text-lg sm:text-xl" /> },
+    { name: "Contact", path: "/contact", icon: <FaEnvelope className="text-lg sm:text-xl" /> },
   ];
 
   useEffect(() => {
@@ -48,15 +52,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            <nav className="flex items-center space-x-2 mr-4">
+            <nav className="flex items-center space-x-4 mr-4">
               {routes.map((route) => (
                 <Link
                   key={route.path}
                   to={route.path}
-                  className={`nav-link ${
+                  className={`flex items-center gap-2 nav-link ${
                     location.pathname === route.path ? "nav-link-active" : ""
-                  }`}
+                  } transition-all duration-300 hover:scale-110`}
                 >
+                  {route.icon}
                   {route.name}
                 </Link>
               ))}
@@ -64,8 +69,8 @@ export function Header() {
 
             {/* Theme Toggle with Rotation Effect on Hover */}
             <motion.div
-              whileHover={{ rotate: 3600 }}  // Rotates when hovered
-              transition={{ duration: 10, ease: "linear" }} // Faster rotation speed
+              whileHover={{ rotate: 3600 }} 
+              transition={{ duration: 10, ease: "linear" }}
             >
               <ThemeToggle />
             </motion.div>
@@ -73,10 +78,10 @@ export function Header() {
 
           {/* Mobile Menu */}
           <div className="flex items-center md:hidden">
-            {/* Theme Toggle with Rotation Effect on Hover for Mobile */}
+            {/* Theme Toggle for Mobile */}
             <motion.div
-              whileHover={{ rotate: 3600 }}  // Rotates when hovered
-              transition={{ duration: 10, ease: "linear" }} // Faster rotation speed
+              whileHover={{ rotate: 3600 }}  
+              transition={{ duration: 10, ease: "linear" }} 
             >
               <ThemeToggle />
             </motion.div>
@@ -95,15 +100,16 @@ export function Header() {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden glass-card animate-fadeIn">
-          <nav className="flex flex-col px-4 py-3 space-y-1">
+          <nav className="flex flex-col px-4 py-3 space-y-2">
             {routes.map((route) => (
               <Link
                 key={route.path}
                 to={route.path}
-                className={`nav-link p-3 ${
+                className={`flex items-center gap-3 p-3 rounded-lg ${
                   location.pathname === route.path ? "nav-link-active" : ""
-                }`}
+                } transition-all duration-300 hover:scale-105`}
               >
+                {route.icon}
                 {route.name}
               </Link>
             ))}
