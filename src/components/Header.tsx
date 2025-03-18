@@ -76,7 +76,7 @@ export function Header() {
               isHomePage ? (
                 <ScrollLink
                   key={route.id}
-                  to={route.id}
+                  to={route.idc}
                   smooth={true}
                   duration={100}
                   spy={true}

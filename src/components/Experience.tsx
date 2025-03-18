@@ -99,7 +99,7 @@ export function Experience() {
             {experienceData.map((item) => (
               <div 
                 key={item.id}
-                onClick={() => setSelectedItem(item)}
+                onClick={() => setSelectedItem(selectedItem?.id === item.id ? null : item)}
                 className={`cursor-pointer glass-card rounded-xl px-5 py-4 transition-all duration-300 hover:border-primary/50 ${
                   selectedItem?.id === item.id ? "border-primary" : ""
                 }`}
