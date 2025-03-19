@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Lottie from "lottie-react";
-import animeCharacter from "./O4d30ABIDr.json"; // Ensure correct path
+import animeCharacter from "./Animation - 1742387609374.json"; // Ensure correct path
 
 // Define the TimelineItem interface
 interface TimelineItem {
