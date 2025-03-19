@@ -1,3 +1,6 @@
+import Lottie from "lottie-react";
+import animeCharacter from "./Animation - 1742344486285.json"; // Replace with your desired animation file
+
 export function Education() {
   return (
     <section id="education" className="py-20 bg-background">
@@ -10,10 +13,12 @@ export function Education() {
         <div className="max-w-4xl mx-auto">
           <div className="glass-card rounded-2xl p-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-1/3">
-                <div className="aspect-video bg-primary/10 rounded-lg flex items-center justify-center">
-                  <div className="text-4xl font-bold text-primary">B.Tech</div>
-                </div>
+              <div className="md:w-1/3 flex items-center justify-center">
+                <Lottie 
+                  animationData={animeCharacter} 
+                  loop={true} 
+                  className="w-40 h-40 md:w-52 md:h-52"
+                />
               </div>
 
               <div className="md:w-2/3 space-y-4">
@@ -62,59 +67,23 @@ export function Education() {
               <div className="relative pl-8">
                 <div className="timeline-line"></div>
 
-                <div className="relative mb-8">
-                  <div className="timeline-dot absolute -left-8 top-0"></div>
-                  <div className="glass-card rounded-lg p-4">
-                    <h5 className="font-medium">Admission to KIET</h5>
-                    <p className="text-sm text-foreground/70">2021</p>
-                    <p className="mt-2 text-foreground/80">Began B.Tech journey in Computer Science</p>
+                {[
+                  { title: "Admission to KIET", year: "2021", desc: "Began B.Tech journey in Computer Science" },
+                  { title: "First Internship", year: "2023", desc: "Summer Internship at IIIT Hyderabad" },
+                  { title: "Salesforce Developer Internship", year: "2023", desc: "Worked on cloud-based applications using Salesforce" },
+                  { title: "Data Analytics Internship", year: "2024", desc: "Analyzed large datasets and built predictive models" },
+                  { title: "Web Developer Internship", year: "2024", desc: "Developed full-stack web applications using MERN" },
+                  { title: "Present", year: "2025", desc: "Final year - focusing on advanced technologies and career opportunities" }
+                ].map((event, index) => (
+                  <div key={index} className="relative mb-8">
+                    <div className="timeline-dot absolute -left-8 top-0"></div>
+                    <div className="glass-card rounded-lg p-4">
+                      <h5 className="font-medium">{event.title}</h5>
+                      <p className="text-sm text-foreground/70">{event.year}</p>
+                      <p className="mt-2 text-foreground/80">{event.desc}</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="relative mb-8">
-                  <div className="timeline-dot absolute -left-8 top-0"></div>
-                  <div className="glass-card rounded-lg p-4">
-                    <h5 className="font-medium">First Internship</h5>
-                    <p className="text-sm text-foreground/70">2023</p>
-                    <p className="mt-2 text-foreground/80">Summer Internship at IIIT Hyderabad</p>
-                  </div>
-                </div>
-
-                <div className="relative mb-8">
-                  <div className="timeline-dot absolute -left-8 top-0"></div>
-                  <div className="glass-card rounded-lg p-4">
-                    <h5 className="font-medium">Salesforce Developer Internship</h5>
-                    <p className="text-sm text-foreground/70">2023</p>
-                    <p className="mt-2 text-foreground/80">Worked on cloud-based applications using Salesforce</p>
-                  </div>
-                </div>
-
-                <div className="relative mb-8">
-                  <div className="timeline-dot absolute -left-8 top-0"></div>
-                  <div className="glass-card rounded-lg p-4">
-                    <h5 className="font-medium">Data Analytics Internship</h5>
-                    <p className="text-sm text-foreground/70">2024</p>
-                    <p className="mt-2 text-foreground/80">Analyzed large datasets and built predictive models</p>
-                  </div>
-                </div>
-
-                <div className="relative mb-8">
-                  <div className="timeline-dot absolute -left-8 top-0"></div>
-                  <div className="glass-card rounded-lg p-4">
-                    <h5 className="font-medium">Web Developer Internship</h5>
-                    <p className="text-sm text-foreground/70">2024</p>
-                    <p className="mt-2 text-foreground/80">Developed full-stack web applications using MERN</p>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="timeline-dot absolute -left-8 top-0"></div>
-                  <div className="glass-card rounded-lg p-4">
-                    <h5 className="font-medium">Present</h5>
-                    <p className="text-sm text-foreground/70">2025</p>
-                    <p className="mt-2 text-foreground/80">Final year - focusing on advanced technologies and career opportunities</p>
-                  </div>
-                </div>
+                ))}
 
               </div>
             </div>

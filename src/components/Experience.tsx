@@ -1,8 +1,8 @@
-
 import { useState } from "react";
-import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import animeCharacter from "./O4d30ABIDr.json"; // Ensure correct path
 
-// Note: We would need to add framer-motion as a dependency
+// Define the TimelineItem interface
 interface TimelineItem {
   id: number;
   title: string;
@@ -12,6 +12,7 @@ interface TimelineItem {
   description: string[];
 }
 
+// Experience Data
 const experienceData: TimelineItem[] = [
   {
     id: 1,
@@ -21,27 +22,19 @@ const experienceData: TimelineItem[] = [
     location: "Hyderabad, India",
     description: [
       "Flight Booking Platform Development | Flask & Web Technologies",
-      "During my summer internship at IIIT Hyderabad, I worked on developing a website-based Flight Booking Platform using Flask as the backend framework.",
-      "I was responsible for designing and implementing key functionalities such as user authentication, flight search, booking system, and payment integration."
+      "Worked on user authentication, flight search, booking system, and payment integration."
     ]
   },
   {
     id: 2,
     title: "Salesforce Developer Intern",
     organization: "Smartinternz",
-    date: "oct 2023 – Dec 2023",
+    date: "Oct 2023 – Dec 2023",
     location: "India",
     description: [
-        "Developed and deployed cloud-based applications using Salesforce Lightning, Apex, and LWC (Lightning Web Components).",
-        "Integrated Salesforce CRM with third-party APIs and automated workflows using Process Builder and Flow.",
-        "Implemented authentication and role-based access control using Salesforce Security & OAuth 2.0.",
-        "Worked on data modeling, SOQL queries, and Apex triggers to optimize database interactions.",
-        "Collaborated in an Agile environment, using Git for version control and Jira for task management.",
-        "Gained hands-on experience with Salesforce AppExchange and App Builder to create custom solutions.",
-        "Participated in Salesforce Trailhead modules and certifications to enhance platform expertise.",
-        "Implemented CI/CD for Salesforce applications using Salesforce DevOps Center and GitHub Actions.",
-        "Worked on real-world business use cases and developed solutions aligning with industry best practices."
-      ]
+      "Developed cloud applications using Salesforce Lightning, Apex, and LWC.",
+      "Integrated Salesforce CRM with third-party APIs and automated workflows."
+    ]
   },
   {
     id: 3,
@@ -50,17 +43,8 @@ const experienceData: TimelineItem[] = [
     date: "Jul 2024 – Sep 2024",
     location: "India",
     description: [
-      "Analyzed large datasets using Alteryx Designer to clean, transform, and visualize data for business insights.",
-      "Developed automated workflows for data preparation, blending, and predictive analytics using Alteryx tools.",
-      "Utilized SQL to extract, manipulate, and analyze structured data from relational databases.",
-      "Generated interactive dashboards and reports using Alteryx and Tableau to support data-driven decision-making.",
-      "Implemented statistical models and machine learning algorithms to identify trends and anomalies in datasets.",
-      "Optimized ETL pipelines and improved data processing efficiency using Alteryx macros and in-database processing.",
-      "Collaborated with cross-functional teams to interpret analytical results and provide actionable recommendations.",
-      "Explored cloud-based data integration with Alteryx Server for scalable analytics solutions.",
-      "Worked on real-world business problems and delivered insights through hands-on projects using Alteryx workflows."
+      "Analyzed large datasets and automated workflows using Alteryx Designer."
     ]
-    
   },
   {
     id: 4,
@@ -69,18 +53,10 @@ const experienceData: TimelineItem[] = [
     date: "Oct 2024 – Dec 2024",
     location: "India",
     description: [
-      "Developed responsive web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
-      "Designed and implemented user-friendly UI with HTML, CSS (Tailwind, Bootstrap), and JavaScript.",
-      "Integrated authentication & authorization using JWT, OAuth, and Firebase for secure access.",
-      "Built RESTful APIs and optimized database queries for efficient data management.",
-      "Ensured cross-browser compatibility, responsive design, and SEO optimization.",
-      "Worked with Agile methodologies, Git, and CI/CD pipelines for streamlined deployment.",
-      "Implemented WebSockets for real-time features like live chat and notifications.",
-      "Explored cloud solutions (AWS, Firebase, Vercel) for hosting and backend services.",
-      "Developed unit tests and debugging strategies to enhance code reliability.",
-      "Documented project architecture and collaborated in a team environment."
-    ]    
-  },
+      "Built responsive web apps using the MERN stack.",
+      "Implemented authentication, RESTful APIs, and optimized database queries."
+    ]
+  }
 ];
 
 export function Experience() {
@@ -111,7 +87,7 @@ export function Experience() {
             ))}
           </div>
           
-          <div className="glass-card rounded-2xl p-8 h-full animate-fadeIn">
+          <div className="glass-card rounded-2xl p-8 h-full flex items-center justify-center animate-fadeIn">
             {selectedItem ? (
               <div className="space-y-4">
                 <div>
@@ -132,8 +108,18 @@ export function Experience() {
                 </div>
               </div>
             ) : (
-              <div className="h-full flex items-center justify-center">
-                <p className="text-foreground/50">Select an experience to view details</p>
+              <div className="flex items-center space-x-6">
+                {/* Animation */}
+                <Lottie 
+                  animationData={animeCharacter} 
+                  loop={true} 
+                  className="w-64 h-64 md:w-80 md:h-80" // Large size
+                />
+                
+                {/* Text beside animation */}
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground/70">
+                  Select an Experience
+                </h3>
               </div>
             )}
           </div>

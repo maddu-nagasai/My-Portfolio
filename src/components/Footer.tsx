@@ -1,5 +1,6 @@
-
 import { ArrowUp } from "lucide-react";
+import Lottie from "lottie-react";
+import footerAnimation from "./Animation - 1742345466109.json"; // Replace with your desired animation file
 
 export function Footer() {
   const scrollToTop = () => {
@@ -21,6 +22,11 @@ export function Footer() {
           </div>
           
           <div className="flex flex-col items-center md:items-end">
+            <Lottie 
+              animationData={footerAnimation} 
+              loop={true} 
+              className="w-16 h-16 mb-4"
+            />
             <button
               onClick={scrollToTop}
               className="w-10 h-10 rounded-full flex items-center justify-center border border-border hover:bg-accent/30 transition-colors mb-4"
