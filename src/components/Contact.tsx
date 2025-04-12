@@ -113,15 +113,15 @@ export function Contact() {
             </div>
           </div>
 
-         {/* Right Side - Profile Image */}
-<div className="order-1 md:order-2 flex justify-center">
-  <img
-    src="https://res.cloudinary.com/dm7jsi2cz/image/upload/v1742211458/WhatsApp_Image_2025-03-17_at_17.07.04_4e336d19_elquwe.jpg"  
-    alt="Profile"
-    className="rounded-lg shadow-lg w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover         hover:shadow-lg hover:shadow-blue-400/50 transition-shadow duration-300"
+         {/* Right Side - Image */}
+          <div className="order-1 md:order-2 flex justify-center">
+            <img
+              src="https://res.cloudinary.com/dgpiiljnj/image/upload/v1740339296/hero_cyr2jj.jpg"
+              alt="img"
+              className="rounded-lg shadow-lg w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover hover:shadow-lg hover:shadow-blue-400/50 transition-shadow duration-300"
 
-  />
-</div>
+            />
+          </div>
 
         </div>
       </div>

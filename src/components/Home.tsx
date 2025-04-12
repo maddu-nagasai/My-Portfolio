@@ -123,7 +123,7 @@ export function Hero() {
         hover:shadow-lg hover:shadow-blue-400/50 transition-shadow duration-300">
       <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/20 flex items-center justify-center">
         <img
-          src="https://res.cloudinary.com/dgpiiljnj/image/upload/v1740339296/hero_cyr2jj.jpg"
+          src="https://res.cloudinary.com/dgpiiljnj/image/upload/v1744005208/WhatsApp_Image_2025-03-17_at_16.53.30_9ca9f437_ulr0sh.jpg"
           alt="Maddu Nagasai"
           className="w-full h-full object-cover rounded-lg"
         />
